@@ -98,7 +98,14 @@ namespace Vowgan.Clocks
                     switch (LabelModes[i])
                     {
                         case ClockLabelMode.Hour:
-                            label.text = currentTime.ToString("hh");
+                            if (Use24HourTime)
+                            {
+                                label.text = currentTime.ToString("HH");
+                            }
+                            else
+                            {
+                               label.text = currentTime.ToString("hh");
+                            }
                             break;
                         case ClockLabelMode.Minute:
                             label.text = currentTime.ToString("mm");
